@@ -1,36 +1,26 @@
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
-from django_filters.rest_framework import DjangoFilterBackend
 from django.core.mail import send_mail
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, mixins, permissions, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-
-from reviews.models import Category, Genre, Title, Review
 from reviews.filters import TitleFilter
-from .permissions import (
-    AdminPermission,
-    IsAdminOrReadOnly,
-    IsAuthorOrAdminPermission,
-)
-from .serializers import (
-    CategoriesSerializer,
-    GenresSerializer,
-    GetConfirmationCodeSerializer,
-    GetTokenSerializer,
-    TitlesCreateSerializer,
-    TitlesViewSerializer,
-    UserMeSerializer,
-    UserSerializer,
-    ReviewSerializer,
-    CommentSerializer,
-)
+from reviews.models import Category, Genre, Review, Title
+
+from .permissions import (AdminPermission, IsAdminOrReadOnly,
+                          IsAuthorOrAdminPermission)
+from .serializers import (CategoriesSerializer, CommentSerializer,
+                          GenresSerializer, GetConfirmationCodeSerializer,
+                          GetTokenSerializer, ReviewSerializer,
+                          TitlesCreateSerializer, TitlesViewSerializer,
+                          UserMeSerializer, UserSerializer)
 
 User = get_user_model()
 
