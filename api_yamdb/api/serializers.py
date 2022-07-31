@@ -3,7 +3,6 @@ import datetime as dt
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-
 from reviews.models import Category, Comment, Genre, Review, Title
 from users.validators import validate_user
 
