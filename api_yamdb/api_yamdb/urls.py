@@ -5,7 +5,8 @@ from django.views.generic import TemplateView
 
 
 def check(request):
-    return HttpResponse(print('Host:', request.META['HTTP_HOST']))
+    print(request.get_host())
+    return HttpResponse(print(request.get_host()))
 
 
 urlpatterns = [
