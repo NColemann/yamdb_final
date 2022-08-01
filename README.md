@@ -2,6 +2,9 @@
 ---
 ![workflow](https://github.com/NColemann/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
+### Адрес сервера
+http://51.250.19.220/
+
 ## Описание
 Проект YaMDb собирает отзывы пользователей на произведения.
 Произведения делятся на категории: "Книги", "Фильмы", "Музыка".
